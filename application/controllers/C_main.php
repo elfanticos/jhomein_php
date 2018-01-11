@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_login extends CI_Controller {
+class C_main extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
@@ -12,8 +12,7 @@ class C_login extends CI_Controller {
         $this->output->set_header('Pragma: no-cache');;
     }
 
-	public function index()
-	{
-		$this->load->view('v_login');
+	public function index() {
+		$this->load->view('v_main');
 	}
 }
