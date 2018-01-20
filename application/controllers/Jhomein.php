@@ -11,10 +11,11 @@ class Jhomein extends CI_Controller {
         $this->output->set_header('Cache-Control: post-check=0, pre-check=0',false);
         $this->output->set_header('Pragma: no-cache');;
     }
-    
+        
 	public function index(){
-
-		$this->load->view('v_jhomein');
+        $menu = $this->load->view('v_menu',true);
+        $data['menu'] = $menu;
+		$this->load->view('v_jhomein',$data);
 	}
 
 }
