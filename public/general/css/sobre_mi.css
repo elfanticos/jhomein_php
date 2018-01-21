@@ -1,0 +1,27 @@
+/*HEADER*/
+.header-home {
+	border-bottom: 1px solid grey;
+}
+
+.header-home h1 {
+	text-align: center;
+}
+
+/*SECTION*/
+.container section {
+	margin: 10%;
+	/*border: 1px solid green;*/
+	/*border-radius: 10px;
+	box-shadow: 0 0 15px #ddd;
+	background: #fff;
+	height: 400px;
+	width: 400px;*/
+
+}
+
+.link {
+	text-decoration: none;
+	font-weight: bolder;
+	color: black;
+}
+

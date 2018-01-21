@@ -11,10 +11,9 @@ body {
 .nav-home ul li a {
 	color: white !important;
 	font-weight: bolder;
+	text-transform: uppercase !important;
 }
 
-.header-home {
-}
 .nav-navigate {
 	width: 100%;
 	position: relative;

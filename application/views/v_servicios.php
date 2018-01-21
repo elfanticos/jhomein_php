@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="<?php echo RUTA_PLUGINS?>mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="<?php echo RUTA_CSS?>general.css">
-    <title>Jhomein | Mi historia</title>
+    <title>Jhomein | Servicios</title>
 </head>
 <body>
   <div class="container-fluid">
     <?php echo isset($menu) ? $menu : null ?>
     <div class="header-home">
       <header>
-        <h1>Mi historia</h1>
+        <h1>Clientes</h1>
       </header>
     </div>
   </div>
@@ -27,7 +27,7 @@
   <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js"></script>
   <script type="text/javascript">
     // $(document).ready(function() {
-        $('#nav-bar').find('ul ').children('li:nth-child(2)').addClass('active');
+        $('#nav-bar').find('ul ').children('li:nth-child(3)').addClass('active');
     // });
   </script>
 </body>

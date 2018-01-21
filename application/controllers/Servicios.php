@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clientes extends CI_Controller {
+class Servicios extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
@@ -14,10 +14,7 @@ class Clientes extends CI_Controller {
         
 	public function index() {
         $data['menu'] = $this->load->view('v_menu',array(),true);
-		$this->load->view('v_clientes',$data);
+		$this->load->view('v_servicios',$data);
 	}
 
 }
-
-/* End of file Jhomein.php */
-/* Location: ./application/controllers/Jhomein.php */
