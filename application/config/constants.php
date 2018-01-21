@@ -86,8 +86,8 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 //RUTAS PUBLICAS
-// defined('RUTA_PROYECTO')  OR define('RUTA_PROYECTO', '/jhomein');
-defined('RUTA_PROYECTO')  OR define('RUTA_PROYECTO', '');
+defined('RUTA_PROYECTO')  OR define('RUTA_PROYECTO', '/jhomein');
+// defined('RUTA_PROYECTO')  OR define('RUTA_PROYECTO', '');
 defined('RUTA_FISICA')  OR define('RUTA_FISICA',     'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).RUTA_PROYECTO);	
 defined('RUTA_IMG')       OR define('RUTA_IMG'  ,    'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).RUTA_PROYECTO.'/public/general/img/');
 defined('RUTA_PLUGINS')   OR define('RUTA_PLUGINS',  'http://'.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : null).RUTA_PROYECTO.'/public/plugins/');

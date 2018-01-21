@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Jhomein extends CI_Controller {
+class Mi_historia extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
@@ -14,7 +14,7 @@ class Jhomein extends CI_Controller {
         
 	public function index() {
         $data['menu'] = $this->load->view('v_menu',array(),true);
-		$this->load->view('v_jhomein',$data);
+		$this->load->view('v_mi_historia',$data);
 	}
 
 }

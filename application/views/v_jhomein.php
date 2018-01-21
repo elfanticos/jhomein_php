@@ -15,16 +15,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-    <?php echo $menu ?>
-		<!-- <div>
-      <nav class="nav-navigate">
-        <ul>
-          <li><a href="#">Novedades</a></li>
-          <li><a href="#">Tutoriales</a></li>
-          <li><a href="#">Descargas</a></li>
-        </ul>
-      </nav> 
-    </div> -->
+    <?php echo isset($menu) ? $menu : null ?>
     <div class="header-home">
       <header>
         <h1>Bienvenidos</h1>
