@@ -1,13 +1,17 @@
-Options FollowSymLinks
-<IfModule mod_rewrite.c>
-    RewriteEngine on
+RewriteEngine on
+RewriteCond $1 !^(index\.php|uploads|images|public|robots\.txt)
+RewriteRule ^(.*)$ /jhomein/index.php/$1 [L]
 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /jhomein/index.php/$1 [L]
+Options -Indexes
+ErrorDocument 403 /403.html
 
+<IfModule mod_deflate.c>
+<FilesMatch "\.(html|txt|css|js|php|pl)$">
+SetOutputFilter DEFLATE
+</FilesMatch>
 </IfModule>
 
-<IfModule !mod_rewrite.c>
-    ErrorDocument 404 /index.php
+<IfModule mod_headers.c>
+    Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
+    Header set Pragma "no-cache"
 </IfModule>
