@@ -1,17 +1,23 @@
-RewriteEngine on
-RewriteCond $1 !^(index\.php|uploads|images|public|robots\.txt)
-RewriteRule ^(.*)$ /jhomein/index.php/$1 [L]
+#Activamos la reescritura SI SOLO SI el mod_rewrite se encuentra activado, así se evitan errores 500
+<IfModule mod_rewrite.c>
 
-Options -Indexes
-ErrorDocument 403 /403.html
+    # Suponiendo que el listado de directorios esté desactivado, permitimos indexación y activamos el rewrite
+    Options +FollowSymLinks -Indexes
+    RewriteEngine on
 
-<IfModule mod_deflate.c>
-<FilesMatch "\.(html|txt|css|js|php|pl)$">
-SetOutputFilter DEFLATE
-</FilesMatch>
-</IfModule>
+    # Usualmente "AllowOverride" debería estar en 'All' en el apache.conf/vhost.conf, pero si no descomentas lo siguiente para evitar un error 404
+    #AllowOverride All
 
-<IfModule mod_headers.c>
-    Header set Cache-Control "private, no-cache, no-store, proxy-revalidate, no-transform"
-    Header set Pragma "no-cache"
+    # Se supone que la regla aplica desde el directorio donde se encuentra el .htaccess pero si es necesario lo especificas, siendo / la raiz de dominio
+    #RewriteBase /
+
+    # con esta instrucción bloqueamos el acceso a la carpeta system, si es que se encuentra en el directorio web
+    RedirectMatch 403 ^/(system).*$
+
+    # Antes de redireccionar, se verifica que la petición no sea a un directorio o archivo existente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Si el archivo/directorio no existe, redireccionamos
+    RewriteRule ^(.*)$ /jhomein/index.php/$1 [L]
 </IfModule>
