@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|uploads|images|public|robots\.txt)
+RewriteCond $1 !^(index.php|uploads|images|public|robots\.txt)
 RewriteRule ^(.*)$ /jhomein/index.php/$1 [L]
 
 Options -Indexes
